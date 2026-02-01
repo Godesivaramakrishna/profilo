@@ -41,20 +41,19 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
             ? "bg-black/80 backdrop-blur-xl border-b border-white/10"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="container px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <a
-              href="#"
+              href="#about"
               onClick={(e) => {
                 e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                scrollToSection("#about");
               }}
               className="text-xl font-mono font-bold tracking-[0.3em] bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent"
             >

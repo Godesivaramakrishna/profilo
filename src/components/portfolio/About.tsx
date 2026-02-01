@@ -53,12 +53,12 @@ const About = () => {
             <div className="rounded-2xl p-8 border border-white/10 bg-white/5">
               <h3 className="text-xl font-display font-semibold mb-4">Profile Summary</h3>
               <p className="text-white/60 leading-relaxed">
-                Electronics and Communication Engineering student with strong interest in Cloud Computing 
-                and Backend Development. Hands-on experience with AWS services, serverless architectures, 
-                and infrastructure automation using Terraform. Adaptable to new environments with a 
+                Electronics and Communication Engineering student with strong interest in Cloud Computing
+                and Backend Development. Hands-on experience with AWS services, serverless architectures,
+                and infrastructure automation using Terraform. Adaptable to new environments with a
                 problem-solving mindset and eagerness to learn.
               </p>
-              
+
               <div className="mt-6 flex flex-wrap gap-3">
                 {["Python", "AWS", "Terraform", "Git", "DSA"].map((skill, idx) => (
                   <motion.span
@@ -66,7 +66,7 @@ const About = () => {
                     initial={{ opacity: 0, scale: 0.8, y: 10 }}
                     animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.5 + idx * 0.1 }}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.08,
                       backgroundColor: "rgba(255, 255, 255, 0.15)",
                       borderColor: "rgba(236, 72, 153, 0.5)"
@@ -91,7 +91,7 @@ const About = () => {
               <GraduationCap className="h-5 w-5 text-pink-300" />
               Education
             </h3>
-            
+
             {education.map((edu, index) => (
               <motion.div
                 key={index}
@@ -102,7 +102,7 @@ const About = () => {
               >
                 <h4 className="font-semibold text-lg mb-2">{edu.degree}</h4>
                 <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="h-4 w-4 text-pink-300" />
                   {edu.institution}
                 </div>
                 <div className="flex items-center justify-between text-sm">
@@ -110,7 +110,7 @@ const About = () => {
                     <Calendar className="h-4 w-4" />
                     {edu.period}
                   </span>
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0, scale: 0.7 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 + index * 0.15 }}
