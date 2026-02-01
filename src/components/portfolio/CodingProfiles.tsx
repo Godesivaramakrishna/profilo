@@ -10,39 +10,39 @@ const CodingProfiles = () => {
   const profiles = [
     {
       name: "LeetCode",
-      username: "sivaramakrishna",
+      username: "23MH1A0424",
       stat: "100+ Problems Solved",
       icon: "🧩",
       color: "from-yellow-500 to-orange-500",
       bgColor: "bg-yellow-500/10",
-      url: "https://leetcode.com/u/Durgaprasad123123/",
+      url: "https://leetcode.com/u/23MH1A0424/",
     },
     {
       name: "GeeksForGeeks",
-      username: "sivaramakrishna",
+      username: "goderaw5kh",
       stat: "100+ Problems Solved",
       icon: "💻",
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-500/10",
-      url: "https://www.geeksforgeeks.org/user/sivaramakrishna/",
+      url: "https://www.geeksforgeeks.org/profile/goderaw5kh",
     },
     {
       name: "CodeChef",
-      username: "sivaramakrishna",
+      username: "gsrk_coder",
       stat: "1★ Coder",
       icon: "👨‍🍳",
       color: "from-amber-600 to-yellow-500",
       bgColor: "bg-amber-500/10",
-      url: "https://www.codechef.com/users/sivaramakrishna",
+      url: "https://www.codechef.com/users/gsrk_coder",
     },
     {
       name: "HackerRank",
-      username: "sivaramakrishna",
+      username: "goderaja288",
       stat: "3★ Problem Solving, SQL, Python | 2★ Java",
       icon: "🏆",
       color: "from-green-600 to-teal-500",
       bgColor: "bg-teal-500/10",
-      url: "https://www.hackerrank.com/profile/sivaramakrishna",
+      url: "https://www.hackerrank.com/profile/goderaja288",
     },
   ];
 
@@ -62,7 +62,7 @@ const CodingProfiles = () => {
   };
 
   return (
-    <section id="coding" className="py-20 md:py-32 relative" ref={ref}>
+    <section id="coding" className="py-20 md:py-32 relative bg-black text-white" ref={ref}>
       <div className="container px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,11 +70,14 @@ const CodingProfiles = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium text-sm uppercase tracking-wider">Competitive Programming</span>
+          <span className="text-pink-200/70 font-medium text-sm uppercase tracking-[0.3em]">Competitive Programming</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-3 mb-4">
-            Coding <span className="gradient-text">Profiles</span>
+            Coding{" "}
+            <span className="bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent">
+              Profiles
+            </span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-white/60 max-w-2xl mx-auto text-lg">
             Consistent practice and problem-solving across multiple platforms
           </p>
         </motion.div>
@@ -87,30 +90,30 @@ const CodingProfiles = () => {
           className="flex flex-wrap justify-center gap-8 mb-12"
         >
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Code2 className="h-6 w-6 text-primary" />
+            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+              <Code2 className="h-6 w-6 text-cyan-200" />
             </div>
             <div>
               <p className="text-2xl font-bold">200+</p>
-              <p className="text-sm text-muted-foreground">Problems Solved</p>
+              <p className="text-sm text-white/60">Problems Solved</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-              <Trophy className="h-6 w-6 text-accent" />
+            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+              <Trophy className="h-6 w-6 text-amber-300" />
             </div>
             <div>
               <p className="text-2xl font-bold">4</p>
-              <p className="text-sm text-muted-foreground">Active Platforms</p>
+              <p className="text-sm text-white/60">Active Platforms</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Star className="h-6 w-6 text-primary" />
+            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+              <Star className="h-6 w-6 text-cyan-200" />
             </div>
             <div>
               <p className="text-2xl font-bold">3★</p>
-              <p className="text-sm text-muted-foreground">Max Rating</p>
+              <p className="text-sm text-white/60">Max Rating</p>
             </div>
           </div>
         </motion.div>
@@ -131,7 +134,7 @@ const CodingProfiles = () => {
               transition={{ duration: 0.4 }}
               className="group"
             >
-              <div className="glass-card rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+              <div className="rounded-2xl p-6 h-full border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-white/20 relative overflow-hidden">
                 {/* Gradient overlay on hover */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${profile.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
@@ -146,7 +149,7 @@ const CodingProfiles = () => {
                   {/* Name */}
                   <h3 className="text-lg font-display font-bold mb-1 flex items-center gap-2">
                     {profile.name}
-                    <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ExternalLink className="h-4 w-4 text-white/50 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
 
                   {/* Stat */}

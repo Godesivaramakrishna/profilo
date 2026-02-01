@@ -23,7 +23,7 @@ const Skills = () => {
     {
       icon: Globe,
       title: "Web & Data",
-      skills: ["Web Scraping", "HTML/CSS", "JavaScript", "API Development"],
+      skills: ["Web Scraping", "API Development"],
       color: "from-green-500 to-emerald-500",
     },
     {
@@ -41,7 +41,7 @@ const Skills = () => {
     {
       icon: Database,
       title: "Databases",
-      skills: ["DynamoDB", "RDS", "SQL", "NoSQL"],
+      skills: ["DynamoDB", "RDS", "SQL"],
       color: "from-indigo-500 to-purple-500",
     },
   ];
@@ -62,7 +62,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-muted/30 relative" ref={ref}>
+    <section id="skills" className="py-20 md:py-32 bg-black text-white relative" ref={ref}>
       <div className="container px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,11 +70,14 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium text-sm uppercase tracking-wider">Skills</span>
+          <span className="text-pink-200/70 font-medium text-sm uppercase tracking-[0.3em]">Skills</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-3 mb-4">
-            Technical <span className="gradient-text">Expertise</span>
+            Technical{" "}
+            <span className="bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent">
+              Expertise
+            </span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-white/60 max-w-2xl mx-auto text-lg">
             A comprehensive toolkit for building cloud-native applications
           </p>
         </motion.div>
@@ -90,7 +93,7 @@ const Skills = () => {
               key={index}
               variants={itemVariants}
               transition={{ duration: 0.5 }}
-              className="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
+              className="rounded-2xl p-6 border border-white/10 bg-white/5 transition-all duration-300 group hover:-translate-y-1 hover:border-white/20"
             >
               <div
                 className={`w-12 h-12 rounded-xl bg-gradient-to-r ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -104,7 +107,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1.5 rounded-lg text-sm bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary transition-colors duration-200"
+                    className="px-3 py-1.5 rounded-lg text-sm bg-white/10 text-white/70 border border-white/10 hover:border-white/30 transition-colors duration-200"
                   >
                     {skill}
                   </span>

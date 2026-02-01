@@ -23,7 +23,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 relative" ref={ref}>
+    <section id="about" className="py-20 md:py-32 relative bg-black text-white" ref={ref}>
       <div className="container px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,11 +31,14 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium text-sm uppercase tracking-wider">About Me</span>
+          <span className="text-pink-200/70 font-medium text-sm uppercase tracking-[0.3em]">About Me</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-3 mb-4">
-            Who I <span className="gradient-text">Am</span>
+            Who I{" "}
+            <span className="bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent">
+              Am
+            </span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-white/60 max-w-2xl mx-auto text-lg">
             A passionate developer focused on cloud computing and backend development
           </p>
         </motion.div>
@@ -47,9 +50,9 @@ const About = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="glass-card rounded-2xl p-8 gradient-border">
+            <div className="rounded-2xl p-8 border border-white/10 bg-white/5">
               <h3 className="text-xl font-display font-semibold mb-4">Profile Summary</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-white/60 leading-relaxed">
                 Electronics and Communication Engineering student with strong interest in Cloud Computing 
                 and Backend Development. Hands-on experience with AWS services, serverless architectures, 
                 and infrastructure automation using Terraform. Adaptable to new environments with a 
@@ -57,13 +60,21 @@ const About = () => {
               </p>
               
               <div className="mt-6 flex flex-wrap gap-3">
-                {["Python", "AWS", "Terraform", "Git", "DSA"].map((skill) => (
-                  <span
+                {["Python", "AWS", "Terraform", "Git", "DSA"].map((skill, idx) => (
+                  <motion.span
                     key={skill}
-                    className="px-3 py-1 rounded-full text-sm bg-primary/10 text-primary border border-primary/20"
+                    initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                    animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.5 + idx * 0.1 }}
+                    whileHover={{ 
+                      scale: 1.08,
+                      backgroundColor: "rgba(255, 255, 255, 0.15)",
+                      borderColor: "rgba(236, 72, 153, 0.5)"
+                    }}
+                    className="px-3 py-1 rounded-full text-sm bg-white/10 text-white/80 border border-white/10 cursor-pointer transition-colors duration-300"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </div>
@@ -77,7 +88,7 @@ const About = () => {
             className="space-y-6"
           >
             <h3 className="text-xl font-display font-semibold flex items-center gap-2">
-              <GraduationCap className="h-5 w-5 text-primary" />
+              <GraduationCap className="h-5 w-5 text-pink-300" />
               Education
             </h3>
             
@@ -87,21 +98,31 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
+                className="rounded-xl p-6 border border-white/10 bg-white/5 hover:border-white/20 transition-colors duration-300"
               >
                 <h4 className="font-semibold text-lg mb-2">{edu.degree}</h4>
-                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-2">
+                <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
                   <MapPin className="h-4 w-4" />
                   {edu.institution}
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="flex items-center gap-2 text-muted-foreground">
+                  <span className="flex items-center gap-2 text-white/60">
                     <Calendar className="h-4 w-4" />
                     {edu.period}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-accent/10 text-accent font-medium">
+                  <motion.span 
+                    initial={{ opacity: 0, scale: 0.7 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.15 }}
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "rgba(236, 72, 153, 0.2)",
+                      boxShadow: "0 0 20px rgba(236, 72, 153, 0.3)"
+                    }}
+                    className="px-3 py-1 rounded-full bg-white/10 text-white/80 font-medium border border-pink-500/20 cursor-default"
+                  >
                     {edu.grade}
-                  </span>
+                  </motion.span>
                 </div>
               </motion.div>
             ))}

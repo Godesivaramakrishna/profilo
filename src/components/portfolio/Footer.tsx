@@ -8,27 +8,32 @@ const Footer = () => {
       icon: Github,
       href: "https://github.com/Godesivaramakrishna",
       label: "GitHub",
+      color: "text-pink-300 hover:text-pink-200",
     },
     {
       icon: Linkedin,
       href: "https://linkedin.com/in/sivaramakrishna",
       label: "LinkedIn",
+      color: "text-blue-300 hover:text-blue-200",
     },
     {
       icon: Mail,
-      href: "mailto:sivaramakrishna@example.com",
+      href: "mailto:goderaja288@gmail.com",
       label: "Email",
+      color: "text-red-400 hover:text-red-300",
     },
   ];
 
   return (
-    <footer className="py-8 border-t border-border">
+    <footer className="py-8 border-t border-white/10 bg-black text-white">
       <div className="container px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo and copyright */}
           <div className="flex items-center gap-2">
-            <span className="text-xl font-display font-bold gradient-text">SK</span>
-            <span className="text-muted-foreground text-sm">
+            <span className="text-xl font-mono font-bold tracking-[0.3em] bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent">
+              SK
+            </span>
+            <span className="text-white/50 text-sm">
               © {currentYear} Sivaramakrishna. All rights reserved.
             </span>
           </div>
@@ -41,7 +46,7 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                className={`p-2 transition-colors ${link.color}`}
                 aria-label={link.label}
               >
                 <link.icon className="h-5 w-5" />
@@ -50,8 +55,11 @@ const Footer = () => {
           </div>
 
           {/* Made with love */}
-          <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> in India
+          <div className="flex items-center gap-1 text-sm text-white/50">
+            Made within{" "}
+            <span className="bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent font-medium">
+              India
+            </span>
           </div>
         </div>
       </div>

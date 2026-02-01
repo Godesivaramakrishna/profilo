@@ -20,7 +20,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20 md:py-32 bg-muted/30 relative" ref={ref}>
+    <section id="experience" className="py-20 md:py-32 bg-black text-white relative" ref={ref}>
       <div className="container px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,11 +28,14 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium text-sm uppercase tracking-wider">Experience</span>
+          <span className="text-pink-200/70 font-medium text-sm uppercase tracking-[0.3em]">Experience</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-3 mb-4">
-            Professional <span className="gradient-text">Journey</span>
+            Professional{" "}
+            <span className="bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent">
+              Journey
+            </span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-white/60 max-w-2xl mx-auto text-lg">
             Building expertise through hands-on industry experience
           </p>
         </motion.div>
@@ -45,26 +48,26 @@ const Experience = () => {
             className="relative"
           >
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/20 transform md:-translate-x-1/2" />
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/15 transform md:-translate-x-1/2" />
 
             {/* Experience card */}
             <div className="relative pl-8 md:pl-0 md:pr-8 md:w-1/2">
               {/* Timeline dot */}
-              <div className="absolute left-0 md:left-auto md:right-0 top-0 w-4 h-4 rounded-full bg-primary transform -translate-x-1.5 md:translate-x-1/2 ring-4 ring-background animate-pulse-glow" />
+              <div className="absolute left-0 md:left-auto md:right-0 top-0 w-4 h-4 rounded-full bg-white/70 transform -translate-x-1.5 md:translate-x-1/2 ring-4 ring-black animate-pulse-glow" />
 
-              <div className="glass-card rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 gradient-border">
+              <div className="rounded-2xl p-6 md:p-8 border border-white/10 bg-white/5 transition-all duration-300">
                 {/* Header */}
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
-                    <Briefcase className="h-7 w-7 text-white" />
+                  <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                    <Briefcase className="h-7 w-7 text-cyan-200" />
                   </div>
                   <div>
                     <h3 className="text-xl font-display font-bold">{experience.title}</h3>
-                    <div className="flex items-center gap-2 text-muted-foreground mt-1">
+                    <div className="flex items-center gap-2 text-white/60 mt-1">
                       <Building className="h-4 w-4" />
                       <span className="text-sm">{experience.company}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-primary mt-1">
+                    <div className="flex items-center gap-2 text-white/70 mt-1">
                       <Calendar className="h-4 w-4" />
                       <span className="text-sm font-medium">{experience.period}</span>
                     </div>
@@ -73,7 +76,7 @@ const Experience = () => {
 
                 {/* Responsibilities */}
                 <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                  <h4 className="text-sm font-semibold text-white/50 uppercase tracking-[0.25em]">
                     Key Responsibilities
                   </h4>
                   {experience.responsibilities.map((resp, index) => (
@@ -84,19 +87,19 @@ const Experience = () => {
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                       className="flex items-start gap-3"
                     >
-                      <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <p className="text-muted-foreground">{resp}</p>
+                      <span className="w-2 h-2 rounded-full bg-white/50 mt-2 flex-shrink-0" />
+                      <p className="text-white/60">{resp}</p>
                     </motion.div>
                   ))}
                 </div>
 
                 {/* Skills used */}
-                <div className="mt-6 pt-6 border-t border-border">
+                <div className="mt-6 pt-6 border-t border-white/10">
                   <div className="flex flex-wrap gap-2">
                     {["AWS EC2", "S3", "Lambda", "DynamoDB", "DevOps"].map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary"
+                        className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/70 border border-white/10"
                       >
                         {skill}
                       </span>

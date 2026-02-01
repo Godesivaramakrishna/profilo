@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
-
   useEffect(() => {
     // Set dark mode by default
     document.documentElement.classList.add("dark");
@@ -19,11 +17,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
-  };
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -50,7 +43,7 @@ const Navbar = () => {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
+            ? "bg-black/80 backdrop-blur-xl border-b border-white/10"
             : "bg-transparent"
         }`}
       >
@@ -63,7 +56,7 @@ const Navbar = () => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="text-xl font-display font-bold gradient-text"
+              className="text-xl font-mono font-bold tracking-[0.3em] bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent"
             >
               SK
             </a>
@@ -74,7 +67,7 @@ const Navbar = () => {
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted"
+                  className="px-4 py-2 text-sm font-medium text-white/60 hover:text-pink-300 transition-colors rounded-lg hover:bg-white/5"
                 >
                   {link.label}
                 </button>
@@ -86,20 +79,7 @@ const Navbar = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={toggleTheme}
-                className="rounded-full"
-              >
-                {isDark ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
-              </Button>
-
-              <Button
-                variant="ghost"
-                size="icon"
-                className="md:hidden rounded-full"
+                className="md:hidden rounded-full text-white/80 hover:text-white"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
                 {isMobileMenuOpen ? (
@@ -111,7 +91,7 @@ const Navbar = () => {
 
               <Button
                 size="sm"
-                className="hidden md:flex gradient-bg text-white font-medium hover:opacity-90"
+                className="hidden md:flex bg-gradient-to-r from-pink-400 to-blue-400 text-black font-medium hover:from-pink-300 hover:to-blue-300"
                 onClick={() => scrollToSection("#contact")}
               >
                 Hire Me
@@ -131,19 +111,19 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
             className="fixed inset-x-0 top-16 z-40 md:hidden"
           >
-            <div className="bg-background/95 backdrop-blur-xl border-b border-border shadow-lg">
+            <div className="bg-black/95 backdrop-blur-xl border-b border-white/10">
               <div className="container px-4 py-4 space-y-1">
                 {navLinks.map((link) => (
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                   >
                     {link.label}
                   </button>
                 ))}
                 <Button
-                  className="w-full mt-4 gradient-bg text-white font-medium"
+                  className="w-full mt-4 bg-gradient-to-r from-pink-400 to-blue-400 text-black font-medium hover:from-pink-300 hover:to-blue-300"
                   onClick={() => scrollToSection("#contact")}
                 >
                   Hire Me
