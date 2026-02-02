@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Github, ExternalLink, Users, Droplet } from "lucide-react";
+import { Github, Users, Droplet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Projects = () => {
@@ -63,7 +63,7 @@ const Projects = () => {
       description:
         "A web application connecting blood donors with recipients in need. Features donor registration, blood type matching, and emergency request handling to facilitate life-saving donations.",
       icon: Droplet,
-      tech: ["React", "Node.js", "MongoDB","Docker", "Google Maps API","Google Cloud Run"],
+      tech: ["React", "Node.js", "MongoDB", "Docker", "Google Maps API", "Google Cloud Run"],
       highlights: [
         "User registration and authentication system",
         "Blood type matching algorithm",
@@ -177,14 +177,7 @@ const Projects = () => {
                       <Github className="mr-2 h-4 w-4" />
                       View Code
                     </Button>
-                    <Button
-                      size="sm"
-                      className={`flex-1 ${themeStyles[project.theme].primaryBtn}`}
-                      onClick={() => window.open(project.github, "_blank")}
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
-                    </Button>
+
                   </div>
                 </div>
               </div>

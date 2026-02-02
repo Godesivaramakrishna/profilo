@@ -12,7 +12,7 @@ const Footer = () => {
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/sivaramakrishna",
+      href: "https://www.linkedin.com/in/gsrk-durgaprasad-a00451291/",
       label: "LinkedIn",
       color: "text-blue-300 hover:text-blue-200",
     },

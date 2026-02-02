@@ -111,7 +111,7 @@ const Hero = () => {
                 <Github className="h-5 w-5 text-pink-300" />
               </a>
               <a
-                href="https://linkedin.com/in/sivaramakrishna"
+                href="https://www.linkedin.com/in/gsrk-durgaprasad-a00451291/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-white/15 text-white/80 hover:text-white hover:border-white/40 transition-all duration-300"
