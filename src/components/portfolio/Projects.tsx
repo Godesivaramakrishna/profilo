@@ -14,7 +14,7 @@ const Projects = () => {
       title: "from-blue-200 to-cyan-200",
       badge: "bg-blue-500/10 text-blue-200 border-blue-400/20",
       icon: "text-blue-300",
-      outlineBtn: "border-blue-300/50 text-blue-200 hover:bg-blue-500/10",
+      outlineBtn: "border-blue-400 text-blue-100 hover:bg-blue-500/20 shadow-[0_0_20px_rgba(59,130,246,0.6)] hover:shadow-[0_0_35px_rgba(59,130,246,0.8)] transition-all duration-300",
       primaryBtn: "bg-gradient-to-r from-blue-400 to-cyan-400 hover:from-blue-300 hover:to-cyan-300 text-black",
     },
     pink: {
@@ -22,7 +22,7 @@ const Projects = () => {
       title: "from-pink-200 to-rose-200",
       badge: "bg-pink-500/10 text-pink-200 border-pink-400/20",
       icon: "text-pink-300",
-      outlineBtn: "border-pink-300/50 text-pink-200 hover:bg-pink-500/10",
+      outlineBtn: "border-pink-400 text-pink-100 hover:bg-pink-500/20 shadow-[0_0_20px_rgba(236,72,153,0.6)] hover:shadow-[0_0_35px_rgba(236,72,153,0.8)] transition-all duration-300",
       primaryBtn: "bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-300 hover:to-rose-300 text-black",
     },
   };
@@ -52,7 +52,7 @@ const Projects = () => {
         "Stored analysis results in DynamoDB with API Gateway exposure",
         "Collaborated in a 6-member team",
       ],
-      github: "https://github.com/Godesivaramakrishna",
+      github: "https://github.com/Godesivaramakrishna/HireFusionAI.git",
       isTeamProject: true,
       gradient: "from-blue-600 to-cyan-500",
       theme: "blue",
