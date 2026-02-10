@@ -8,6 +8,7 @@ import CodingProfiles from "@/components/portfolio/CodingProfiles";
 import Certifications from "@/components/portfolio/Certifications";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
+import ChatBot from "@/components/portfolio/ChatBot";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <CodingProfiles />
       <Contact />
       <Footer />
+      <ChatBot />
     </div>
   );
 };

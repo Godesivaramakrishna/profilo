@@ -92,13 +92,24 @@ const About = () => {
               Education
             </h3>
 
-            {education.map((edu, index) => (
+            {education.map((edu, index) => {
+              const colors = [
+                { glowColor: "rgba(168, 85, 247, 0.7)", bgClass: "bg-gradient-to-br from-purple-500/10 to-purple-600/5" },
+                { glowColor: "rgba(34, 211, 238, 0.7)", bgClass: "bg-gradient-to-br from-cyan-500/10 to-cyan-600/5" }
+              ];
+              const color = colors[index % colors.length];
+              
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="rounded-xl p-6 border border-white/10 bg-white/5 hover:border-white/20 transition-colors duration-300"
+                whileHover={{
+                  boxShadow: `0 0 40px ${color.glowColor}, 0 0 80px ${color.glowColor}40`,
+                  scale: 1.02
+                }}
+                className={`rounded-xl p-6 border-2 border-white/20 transition-all duration-300 cursor-pointer backdrop-blur-sm ${color.bgClass}`}
               >
                 <h4 className="font-semibold text-lg mb-2">{edu.degree}</h4>
                 <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
@@ -114,18 +125,14 @@ const About = () => {
                     initial={{ opacity: 0, scale: 0.7 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 + index * 0.15 }}
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: "rgba(236, 72, 153, 0.2)",
-                      boxShadow: "0 0 20px rgba(236, 72, 153, 0.3)"
-                    }}
-                    className="px-3 py-1 rounded-full bg-white/10 text-white/80 font-medium border border-pink-500/20 cursor-default"
+                    className="px-3 py-1 rounded-full bg-white/10 text-white/80 font-medium border border-white/20 cursor-default"
                   >
                     {edu.grade}
                   </motion.span>
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </motion.div>
         </div>
       </div>
