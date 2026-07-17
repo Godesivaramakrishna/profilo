@@ -9,16 +9,10 @@ const About = () => {
 
   const education = [
     {
-      degree: "B.Tech in Electronics and Communication Engineering",
+      degree: "Electronics and Communication Engineering",
       institution: "Aditya College Of Engineering And Technology, Surampalem",
-      period: "2023 – 2027",
-      grade: "CGPA: 7.75",
-    },
-    {
-      degree: "MPC - Intermediate Education",
-      institution: "Pragati Junior College, Prathipadu",
-      period: "2021 – 2023",
-      grade: "GPA: 7.76",
+      period: "Graduated 2027",
+      grade: "",
     },
   ];
 

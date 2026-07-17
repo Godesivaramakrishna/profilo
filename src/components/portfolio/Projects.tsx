@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Github, Users, Droplet } from "lucide-react";
+import { Github, Users, Droplet, Code2, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Projects = () => {
@@ -55,6 +55,54 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "CloudCompare AI",
+      subtitle: "Distributed SaaS Platform for Cloud & AI Service Comparison",
+      description:
+        "Large-scale, AI-integrated SaaS platform enabling side-by-side comparison of cloud providers (AWS, Azure, GCP, OCI, Alibaba) and AI platforms (OpenAI, Anthropic, Google DeepMind) across pricing, scalability, performance, security, and regional availability.",
+      icon: Code2,
+      tech: [
+        "Java 21",
+        "Spring Boot",
+        "React 19",
+        "Tailwind CSS",
+        "Terraform",
+        "AWS",
+        "Docker",
+        "Jenkins",
+        "SonarQube",
+        "Groq AI",
+        "MySQL",
+      ],
+      highlights: [
+        "Architected large-scale AI-integrated SaaS platform for multi-cloud comparison",
+        "Integrated Groq (LLaMA 3.1) AI chatbot with NLP engine for smart recommendations",
+        "Designed fully distributed AWS stack using Terraform (IaC)",
+        "Built Jenkins CI/CD pipeline with 87%+ test coverage",
+      ],
+      github: "https://github.com/Godesivaramakrishna/Cloud-Compare-AI.git",
+      isTeamProject: true,
+      gradient: "from-purple-600 to-blue-500",
+      theme: "blue",
+    },
+    {
+      title: "Arogya Deeksha",
+      subtitle: "Scalable Blood Donation Management System",
+      description:
+        "Containerized Flask application deployed on GCP Cloud Run achieving cold-start under 1.5 seconds. Features real-time geospatial donor and blood bank discovery with automated CI/CD pipelines.",
+      icon: Heart,
+      tech: ["Python", "Flask", "Docker", "GCP Cloud Run", "GitHub Actions", "Google Maps API", "MySQL"],
+      highlights: [
+        "Deployed containerized Flask application on GCP Cloud Run with cold-start under 1.5 seconds",
+        "Integrated Google Maps API for real-time geospatial donor and blood bank discovery",
+        "Designed normalized MySQL schema for distributed development team",
+        "Automated container builds and deployments via GitHub Actions",
+      ],
+      github: "https://github.com/Godesivaramakrishna/blooddonation.git",
+      isTeamProject: true,
+      gradient: "from-pink-600 to-red-500",
+      theme: "pink",
+    },
+    {
       title: "HireFusion",
       subtitle: "Resume and Interview Analysis Platform",
       description:
@@ -82,24 +130,6 @@ const Projects = () => {
       isTeamProject: true,
       gradient: "from-blue-600 to-cyan-500",
       theme: "blue",
-    },
-    {
-      title: "Blood Donation Platform",
-      subtitle: "Life-Saving Blood Donor Connection System",
-      description:
-        "A web application connecting blood donors with recipients in need. Features donor registration, blood type matching, and emergency request handling to facilitate life-saving donations.",
-      icon: Droplet,
-      tech: ["React", "Node.js", "MongoDB", "Docker", "Google Maps API", "Google Cloud Run"],
-      highlights: [
-        "User registration and authentication system",
-        "Blood type matching algorithm",
-        "Real-time donor availability tracking",
-        "Emergency blood request notifications",
-      ],
-      github: "https://github.com/Godesivaramakrishna/blooddonation.git",
-      isTeamProject: false,
-      gradient: "from-red-600 to-pink-500",
-      theme: "pink",
     },
   ];
 

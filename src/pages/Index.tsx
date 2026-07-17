@@ -1,4 +1,5 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState, useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import Navbar from "@/components/portfolio/Navbar";
 import Hero from "@/components/portfolio/Hero";
 
@@ -14,6 +15,13 @@ const ChatBot = lazy(() => import("@/components/portfolio/ChatBot"));
 
 const Index = () => {
   const [showBelowFold, setShowBelowFold] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ container: containerRef });
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    mass: 1,
+  });
 
   useEffect(() => {
     const requestIdle = (callback: () => void): number | ReturnType<typeof setTimeout> => {
@@ -39,7 +47,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-y-auto">
+      {/* Scroll Progress Bar */}
+      <motion.div
+        style={{
+          scaleX: smoothScroll,
+          transformOrigin: "0%",
+        }}
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 z-50"
+      />
       <Navbar />
       <Hero />
       <Suspense fallback={null}>
