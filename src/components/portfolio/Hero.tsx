@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, FileText, X, Download } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, FileText, FolderOpen, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -130,7 +130,7 @@ const Hero = () => {
                   className="border-blue-300/50 text-blue-200 hover:bg-blue-500/10 font-semibold px-6 sm:px-8 w-full sm:w-auto"
                   onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                 >
-                  <FileText className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <FolderOpen className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   View Projects
                 </Button>
               </motion.div>

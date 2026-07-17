@@ -64,7 +64,7 @@ const ChatBot = () => {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
@@ -217,7 +217,7 @@ const ChatBot = () => {
                   <Input
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    onKeyPress={handleKeyPress}
+                    onKeyDown={handleKeyDown}
                     placeholder="Ask me anything..."
                     disabled={isLoading}
                     className="flex-1 bg-gray-800 border-purple-500/20 focus:border-purple-500 text-white placeholder:text-gray-500"
