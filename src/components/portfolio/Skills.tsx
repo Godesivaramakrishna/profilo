@@ -28,7 +28,9 @@ import {
   Award,
   Medal,
   Star,
-  Table
+  Table,
+  Settings2,
+  Layers
 } from "lucide-react";
 
 const Skills = () => {
@@ -55,6 +57,8 @@ const Skills = () => {
     "Docker": Container,
     "Kubernetes": Boxes,
     "Jenkins": Workflow,
+    "Terraform": Layers,
+    "Ansible": Settings2,
     "AWS CloudFormation": FileCode,
     // Web & Data
     "Web Scraping": Globe2,
@@ -88,6 +92,8 @@ const Skills = () => {
     "Docker": "text-blue-500",
     "Kubernetes": "text-blue-400",
     "Jenkins": "text-red-500",
+    "Terraform": "text-violet-400",
+    "Ansible": "text-rose-400",
     "AWS CloudFormation": "text-orange-400",
     // Web & Data
     "Web Scraping": "text-emerald-400",
@@ -117,9 +123,9 @@ const Skills = () => {
     {
       icon: Terminal,
       title: "⚙️ DevOps",
-      skills: ["Docker", "Kubernetes", "Jenkins", "AWS CloudFormation"],
+      skills: ["Docker", "Kubernetes", "Jenkins", "Terraform", "Ansible", "AWS CloudFormation"],
       color: "from-purple-500 to-pink-500",
-      highlightSkill: "AWS CloudFormation",
+      highlightSkill: "Terraform",
     },
     {
       icon: Globe,

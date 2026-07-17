@@ -169,11 +169,19 @@ const Hero = () => {
             {/* Right image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              animate={{ opacity: 1, scale: 1, y: [0, -12, 0] }}
+              transition={{
+                opacity: { duration: 0.7, delay: 0.2 },
+                scale: { duration: 0.7, delay: 0.2 },
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }
+              }}
               className="relative mt-8 lg:mt-0"
             >
-              <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-br from-pink-500/20 via-fuchsia-500/10 to-blue-500/20 blur-2xl" />
+              <motion.div
+                animate={{ opacity: [0.5, 0.85, 0.5] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -inset-4 sm:-inset-6 bg-gradient-to-br from-pink-500/20 via-fuchsia-500/10 to-blue-500/20 blur-2xl"
+              />
               <div className="relative rounded-2xl bg-gradient-to-br from-pink-500/30 via-transparent to-blue-500/30 p-[1px]">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4">
                   <img
@@ -183,7 +191,7 @@ const Hero = () => {
                   />
                   <div className="absolute inset-x-4 sm:inset-x-6 bottom-4 sm:bottom-6 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-black/70 text-white text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] px-3 sm:px-4 py-2 rounded-full border border-white/10">
                     <span className="text-pink-200">Available for</span>
-                    <span className="text-blue-200">cloud and devops and python ai</span>
+                    <span className="text-blue-200">freelance & full-time</span>
                   </div>
                 </div>
               </div>
